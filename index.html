@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dilek Kutum – Premium Hediye Kutuları</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #FDF9F4;
+      --blush: #E8D5C4;
+      --rose: #C4957A;
+      --deep-rose: #8B5E4A;
+      --gold: #C9A96E;
+      --dark-gold: #9B7A40;
+      --charcoal: #2C2520;
+      --mid: #6B5A52;
+      --light-border: #E0D4C8;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ANNOUNCEMENT BAR */
+    .announcement {
+      background: var(--charcoal);
+      color: var(--blush);
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      padding: 10px;
+      font-family: var(--sans);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--light-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 80px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--rose); }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .logo span {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-icon {
+      cursor: pointer;
+      color: var(--charcoal);
+      font-size: 18px;
+      transition: color 0.3s;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      text-decoration: none;
+    }
+
+    .nav-icon:hover { color: var(--rose); }
+
+    .cart-badge {
+      background: var(--rose);
+      color: white;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 8% 80px 10%;
+      background: var(--warm-white);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--mid);
+      max-width: 420px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 16px 40px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-family: var(--sans);
+      font-weight: 400;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--deep-rose);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      font-weight: 400;
+      border-bottom: 1px solid var(--charcoal);
+      padding-bottom: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .btn-secondary:hover {
+      color: var(--rose);
+      border-color: var(--rose);
+    }
+
+    .hero-visual {
+      position: relative;
+      background: linear-gradient(145deg, #E8D5C4 0%, #D4B8A0 50%, #C4A080 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      bottom: 60px;
+      left: 40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero-box-illustration {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .box-3d {
+      width: 260px;
+      height: 260px;
+      position: relative;
+      margin: 0 auto 24px;
+    }
+
+    .box-body {
+      width: 220px;
+      height: 180px;
+      background: var(--warm-white);
+      border: 2px solid rgba(255,255,255,0.6);
+      border-radius: 4px;
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      box-shadow: 8px 8px 0 rgba(139,94,74,0.3), 16px 16px 0 rgba(139,94,74,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .box-body-inner {
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      color: var(--rose);
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .box-lid {
+      width: 240px;
+      height: 60px;
+      background: var(--charcoal);
+      border-radius: 4px 4px 0 0;
+      position: absolute;
+      top: 30px;
+      left: 10px;
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 110px;
+      background: var(--gold);
+    }
+
+    .ribbon::before, .ribbon::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .ribbon::before { right: 0; transform-origin: right; transform: rotate(30deg); }
+    .ribbon::after { left: 0; transform-origin: left; transform: rotate(-30deg); }
+
+    .hero-box-label {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-style: italic;
+      color: white;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--light-border);
+    }
+
+    .hero-stat {
+      text-align: left;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--charcoal);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* MARQUEE */
+    .marquee-strip {
+      background: var(--rose);
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-inner {
+      display: inline-flex;
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee-item {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--warm-white);
+      padding: 0 48px;
+      font-weight: 400;
+    }
+
+    .marquee-dot {
+      color: rgba(255,255,255,0.5);
+      margin: 0 -24px;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* SECTION STYLES */
+    section { padding: 100px 5%; }
+
+    .section-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 64px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--charcoal);
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    /* CATEGORIES */
+    .categories { background: var(--warm-white); }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cat-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      cursor: pointer;
+      group: true;
+    }
+
+    .cat-bg {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+    }
+
+    .cat-card:hover .cat-bg { transform: scale(1.04); }
+
+    .cat-bg-1 { background: linear-gradient(160deg, #E8D5C4, #C4957A); }
+    .cat-bg-2 { background: linear-gradient(160deg, #D4C5E2, #9B7AB8); }
+    .cat-bg-3 { background: linear-gradient(160deg, #C5D4E8, #7A9BC4); }
+    .cat-bg-4 { background: linear-gradient(160deg, #D4E8C5, #7AB89B); }
+
+    .cat-icon {
+      font-size: 48px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      opacity: 0.4;
+    }
+
+    .cat-info {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .cat-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: white;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .cat-count {
+      font-size: 11px;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.1em;
+    }
+
+    /* PRODUCTS */
+    .products { background: var(--cream); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      cursor: pointer;
+    }
+
+    .product-img {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: relative;
+      background: var(--warm-white);
+    }
+
+    .product-img-bg {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-card:hover .product-img-bg { transform: scale(1.04); }
+
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--charcoal);
+      color: var(--cream);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      font-weight: 400;
+    }
+
+    .badge-new { background: var(--rose); }
+    .badge-fav { background: var(--dark-gold); }
+
+    .product-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: var(--mid);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product-price {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    .product-price span {
+      font-size: 13px;
+      color: var(--mid);
+      font-family: var(--sans);
+    }
+
+    .add-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--charcoal);
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--charcoal);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .add-btn:hover { background: var(--charcoal); color: var(--cream); }
+
+    /* Box visuals */
+    .box-vis {
+      width: 140px;
+      height: 140px;
+      position: relative;
+    }
+
+    .bv-body {
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: 120px;
+      height: 95px;
+      border-radius: 3px;
+    }
+
+    .bv-lid {
+      position: absolute;
+      top: 20px;
+      left: 5px;
+      width: 130px;
+      height: 35px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .bv-ribbon-v {
+      position: absolute;
+      left: 50%;
+      top: 18px;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 97px;
+    }
+
+    .bv-ribbon-h {
+      position: absolute;
+      top: 50px;
+      left: 10px;
+      height: 3px;
+      width: 120px;
+    }
+
+    .box1 .bv-body { background: #EDD5C0; border: 1.5px solid #C4957A; }
+    .box1 .bv-lid { background: #C4957A; }
+    .box1 .bv-ribbon-v, .box1 .bv-ribbon-h { background: #C9A96E; }
+
+    .box2 .bv-body { background: #D4C5E2; border: 1.5px solid #9B7AB8; }
+    .box2 .bv-lid { background: #6B4A8B; }
+    .box2 .bv-ribbon-v, .box2 .bv-ribbon-h { background: #C9A96E; }
+
+    .box3 .bv-body { background: #2C2520; border: 1.5px solid #6B5A52; }
+    .box3 .bv-lid { background: #1A1512; }
+    .box3 .bv-ribbon-v, .box3 .bv-ribbon-h { background: #C9A96E; }
+
+    .box4 .bv-body { background: #FEF9EC; border: 1.5px solid #C9A96E; }
+    .box4 .bv-lid { background: #C9A96E; }
+    .box4 .bv-ribbon-v, .box4 .bv-ribbon-h { background: #8B5E4A; }
+
+    .box5 .bv-body { background: #E8F0F8; border: 1.5px solid #7A9BC4; }
+    .box5 .bv-lid { background: #4A7BAC; }
+    .box5 .bv-ribbon-v, .box5 .bv-ribbon-h { background: #C9A96E; }
+
+    .box6 .bv-body { background: #FCEAF0; border: 1.5px solid #D4537E; }
+    .box6 .bv-lid { background: #C44070; }
+    .box6 .bv-ribbon-v, .box6 .bv-ribbon-h { background: #C9A96E; }
+
+    /* CUSTOMIZE SECTION */
+    .customize {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 120px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .customize::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.2);
+    }
+
+    .customize::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.1);
+    }
+
+    .customize-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .customize-text .section-eyebrow { color: var(--gold); }
+    .customize-text .section-title { color: var(--cream); text-align: left; }
+
+    .customize-text p {
+      color: rgba(250,247,242,0.65);
+      font-size: 15px;
+      margin: 24px 0 40px;
+      line-height: 1.9;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .step-text h4 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .step-text p {
+      font-size: 13px;
+      color: rgba(250,247,242,0.55);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 16px 40px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-family: var(--sans);
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-gold:hover { background: #D4B57A; transform: translateY(-1px); }
+
+    .customize-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .big-box {
+      width: 320px;
+      height: 320px;
+      position: relative;
+    }
+
+    .bb-body {
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      width: 280px;
+      height: 230px;
+      background: var(--warm-white);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bb-body-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--rose);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .bb-lid {
+      position: absolute;
+      top: 40px;
+      left: 10px;
+      width: 300px;
+      height: 75px;
+      background: var(--rose);
+      border-radius: 4px 4px 0 0;
+    }
+
+    .bb-ribbon-v {
+      position: absolute;
+      left: 50%;
+      top: 38px;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 242px;
+      background: var(--gold);
+    }
+
+    .bb-ribbon-h {
+      position: absolute;
+      top: 155px;
+      left: 20px;
+      height: 4px;
+      width: 280px;
+      background: var(--gold);
+    }
+
+    .bb-bow {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 30px;
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+    }
+
+    /* OCCASIONS */
+    .occasions { background: var(--warm-white); }
+
+    .occasion-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .occasion-card {
+      text-align: center;
+      padding: 32px 12px;
+      border: 1px solid var(--light-border);
+      cursor: pointer;
+      transition: border-color 0.3s, background 0.3s;
+      background: var(--cream);
+    }
+
+    .occasion-card:hover {
+      border-color: var(--rose);
+      background: var(--warm-white);
+    }
+
+    .occasion-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+    .occasion-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--charcoal);
+      display: block;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--cream); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testi-card {
+      background: var(--warm-white);
+      border: 1px solid var(--light-border);
+      padding: 36px 32px;
+    }
+
+    .testi-stars {
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .testi-quote {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .testi-author {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: #F0E6DA;
+      padding: 100px 5%;
+      text-align: center;
+    }
+
+    .newsletter .section-title { margin-bottom: 16px; }
+
+    .newsletter p {
+      font-size: 15px;
+      color: var(--mid);
+      margin-bottom: 40px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 16px 20px;
+      font-size: 14px;
+      font-family: var(--sans);
+      border: 1px solid var(--light-border);
+      border-right: none;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      outline: none;
+      font-weight: 300;
+    }
+
+    .newsletter-input:focus { border-color: var(--rose); }
+    .newsletter-input::placeholder { color: #B0A098; }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 80px 5% 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto 64px;
+    }
+
+    .footer-brand .logo { color: var(--cream); display: block; margin-bottom: 20px; }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(250,247,242,0.5);
+      line-height: 1.8;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(250,247,242,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: rgba(250,247,242,0.6);
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    .footer-col h4 {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 14px;
+      color: rgba(250,247,242,0.5);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 300;
+    }
+    .footer-col ul li a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 32px;
+      border-top: 1px solid rgba(250,247,242,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      color: rgba(250,247,242,0.3);
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .pay-icon {
+      background: rgba(250,247,242,0.1);
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: rgba(250,247,242,0.5);
+      letter-spacing: 0.05em;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.8s 0.2s both; }
+    .hero-title { animation: fadeUp 0.8s 0.4s both; }
+    .hero-desc { animation: fadeUp 0.8s 0.6s both; }
+    .hero-cta { animation: fadeUp 0.8s 0.8s both; }
+    .hero-stats { animation: fadeUp 0.8s 1s both; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 340px; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .occasion-grid { grid-template-columns: repeat(3, 1fr); }
+      .testi-grid { grid-template-columns: 1fr; }
+      .customize-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .customize-visual { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      nav .nav-links { display: none; }
+      .product-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .occasion-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement">
+    ✦ &nbsp; 500₺ ve üzeri siparişlerde ücretsiz kargo &nbsp; ✦ &nbsp; Kişiselleştirilmiş not kartı her siparişe dahil &nbsp; ✦
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#koleksiyonlar">Koleksiyonlar</a></li>
+      <li><a href="#urunler">Ürünler</a></li>
+      <li><a href="#ozel-tasarim">Özel Tasarım</a></li>
+      <li><a href="#kurumsal">Kurumsal</a></li>
+    </ul>
+
+    <a href="#" class="logo">dilek<span>kutum</span></a>
+
+    <div class="nav-actions">
+      <a href="#" class="nav-icon">Arama</a>
+      <a href="#" class="nav-icon">Hesabım</a>
+      <a href="#" class="nav-icon">Sepet <span class="cart-badge">3</span></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="padding: 0;">
+    <div class="hero-text">
+      <p class="hero-eyebrow">✦ Duyguları hediyeye dönüştür</p>
+      <h1 class="hero-title">Her anın <em>özel bir</em><br>kutlama hakkı var</h1>
+      <p class="hero-desc">El seçimi premium ürünler, zarif kutulama ve kişiye özel dokunuşlarla hazırlanan hediyeler. Sevdiklerinize duygularınızı en güzel şekilde aktarın.</p>
+      <div class="hero-cta">
+        <a href="#urunler" class="btn-primary">Koleksiyonu Keşfet</a>
+        <a href="#ozel-tasarim" class="btn-secondary">Özel Tasarım</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num">2.400+</span>
+          <span class="stat-label">Mutlu müşteri</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-num">48s</span>
+          <span class="stat-label">İçinde kargoda</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-num">%100</span>
+          <span class="stat-label">El yapımı ambalaj</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-box-illustration">
+        <div class="box-3d">
+          <div class="box-body">
+            <div class="box-body-inner">
+              "Seninle her an<br>bir hediye gibi..."
+            </div>
+          </div>
+          <div class="box-lid"></div>
+          <div class="ribbon"></div>
+        </div>
+        <p class="hero-box-label">dilek<em style="font-style:italic">kutum</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span class="marquee-item">Premium Kutulama</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">El Seçimi Ürünler</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Kişiselleştirilmiş Tasarım</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Ücretsiz Kargo</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Kurumsal Hediyeler</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Premium Kutulama</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">El Seçimi Ürünler</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Kişiselleştirilmiş Tasarım</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Ücretsiz Kargo</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Kurumsal Hediyeler</span>
+      <span class="marquee-item marquee-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="koleksiyonlar">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Koleksiyonlarımız</p>
+      <h2 class="section-title">Herkese özel<br>bir <em>seçki</em></h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-1">
+          <div class="cat-icon">🌹</div>
+          <div class="cat-info">
+            <span class="cat-name">Romantik</span>
+            <span class="cat-count">24 ürün</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-2">
+          <div class="cat-icon">🎁</div>
+          <div class="cat-info">
+            <span class="cat-name">Doğum Günü</span>
+            <span class="cat-count">32 ürün</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-3">
+          <div class="cat-icon">✨</div>
+          <div class="cat-info">
+            <span class="cat-name">Özel Günler</span>
+            <span class="cat-count">18 ürün</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-4">
+          <div class="cat-icon">🏢</div>
+          <div class="cat-info">
+            <span class="cat-name">Kurumsal</span>
+            <span class="cat-count">15 ürün</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="urunler">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Öne Çıkan Ürünler</p>
+      <h2 class="section-title">En çok <em>sevilen</em><br>hediye kutuları</h2>
+    </div>
+    <div class="product-grid">
+
+      <!-- Ürün 1 -->
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg" style="background: #F5ECE4;">
+            <div class="box-vis box1">
+              <div class="bv-body"></div>
+              <div class="bv-lid"></div>
+              <div class="bv-ribbon-v"></div>
+              <div class="bv-ribbon-h"></div>
+            </div>
+          </div>
+          <span class="product-badge badge-new">Yeni</span>
+        </div>
+        <h3 class="product-name">Romantik Anlar Kutusu</h3>
+        <p class="product-desc">Mum, sabun gülü, el yapımı çikolata ve kişisel not kartı içerir.</p>
+        <div class="product-footer">
+          <div class="product-price">₺849 <span>/ adet</span></div>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+
+      <!-- Ürün 2 -->
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg" style="background: #EDE4F5;">
+            <div class="box-vis box2">
+              <div class="bv-body"></div>
+              <div class="bv-lid"></div>
+              <div class="bv-ribbon-v"></div>
+              <div class="bv-ribbon-h"></div>
+            </div>
+          </div>
+          <span class="product-badge badge-fav">⭐ En Sevilen</span>
+        </div>
+        <h3 class="product-name">Lüks Doğum Günü Seti</h3>
+        <p class="product-desc">Seçkin parfüm, el kremi, ipek fular ve altın varaklı kutuda.</p>
+        <div class="product-footer">
+          <div class="product-price">₺1.290 <span>/ adet</span></div>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+
+      <!-- Ürün 3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg" style="background: #E8E0D8;">
+            <div class="box-vis box3">
+              <div class="bv-body"></div>
+              <div class="bv-lid"></div>
+              <div class="bv-ribbon-v"></div>
+              <div class="bv-ribbon-h"></div>
+            </div>
+          </div>
+        </div>
+        <h3 class="product-name">Siyah Premium Koleksiyon</h3>
+        <p class="product-desc">Mat siyah kutu, altın detaylar, özel seçilmiş ürünlerle.</p>
+        <div class="product-footer">
+          <div class="product-price">₺1.650 <span>/ adet</span></div>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+
+      <!-- Ürün 4 -->
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg" style="background: #FBF5E8;">
+            <div class="box-vis box4">
+              <div class="bv-body"></div>
+              <div class="bv-lid"></div>
+              <div class="bv-ribbon-v"></div>
+              <div class="bv-ribbon-h"></div>
+            </div>
+          </div>
+          <span class="product-badge badge-new">Yeni</span>
+        </div>
+        <h3 class="product-name">Altın Işıltı Seti</h3>
+        <p class="product-desc">Altın detaylı kutu, pırıltılı aksesuar ve tatlı ürünler içerir.</p>
+        <div class="product-footer">
+          <div class="product-price">₺975 <span>/ adet</span></div>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+
+      <!-- Ürün 5 -->
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg" style="background: #E4EDF5;">
+            <div class="box-vis box5">
+              <div class="bv-body"></div>
+              <div class="bv-lid"></div>
+              <div class="bv-ribbon-v"></div>
+              <div class="bv-ribbon-h"></div>
+            </div>
+          </div>
+        </div>
+        <h3 class="product-name">Mavi Huzur Koleksiyonu</h3>
+        <p class="product-desc">Aromaterapi ürünleri, bitki çayları ve dinlendirici aksesuarlar.</p>
+        <div class="product-footer">
+          <div class="product-price">₺720 <span>/ adet</span></div>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+
+      <!-- Ürün 6 -->
+      <div class="product-card">
+        <div class="product-img">
+          <div class="product-img-bg" style="background: #FAEAF0;">
+            <div class="box-vis box6">
+              <div class="bv-body"></div>
+              <div class="bv-lid"></div>
+              <div class="bv-ribbon-v"></div>
+              <div class="bv-ribbon-h"></div>
+            </div>
+          </div>
+          <span class="product-badge badge-fav">⭐ En Sevilen</span>
+        </div>
+        <h3 class="product-name">Pembe Rüya Seti</h3>
+        <p class="product-desc">Tatlı kokular, el yapımı sabunlar ve özel not kağıdı hediye kutusu.</p>
+        <div class="product-footer">
+          <div class="product-price">₺890 <span>/ adet</span></div>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CUSTOMIZE -->
+  <section class="customize" id="ozel-tasarim">
+    <div class="customize-inner">
+      <div class="customize-text">
+        <p class="section-eyebrow">✦ Özel Tasarım Hizmeti</p>
+        <h2 class="section-title" style="text-align:left; color: var(--warm-white);">Sizin <em style="color: var(--gold);">hayal ettiğiniz</em><br>kutuyu tasarlayalım</h2>
+        <p>Marka renkleri, kişisel mesajlar, özel ürün seçimi — hepsini bir araya getirerek unutulmaz bir hediye deneyimi yaratıyoruz.</p>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <div class="step-text">
+              <h4>Konsept Seçimi</h4>
+              <p>Renk paleti, tema ve kutulama stilini birlikte belirleyeceğiz.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <div class="step-text">
+              <h4>Ürün Seçkisi</h4>
+              <p>Bütçe ve kişiye özel el seçimi premium ürünleri kürasyonluyoruz.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <div class="step-text">
+              <h4>Paketleme & Teslimat</h4>
+              <p>Her kutu elle hazırlanır ve özenle paketlenerek kapınıza gelir.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="btn-gold">Özel Kutu Tasarla</a>
+      </div>
+
+      <div class="customize-visual">
+        <div class="big-box">
+          <div class="bb-body">
+            <div class="bb-body-text">
+              "Sana özel,<br>seninle hayal ettik"
+            </div>
+          </div>
+          <div class="bb-lid"></div>
+          <div class="bb-ribbon-v"></div>
+          <div class="bb-ribbon-h"></div>
+          <div class="bb-bow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OCCASIONS -->
+  <section class="occasions">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Hangi özel gün için?</p>
+      <h2 class="section-title">Her <em>anın</em> bir sebebi var</h2>
+    </div>
+    <div class="occasion-grid">
+      <div class="occasion-card">
+        <span class="occasion-icon">💍</span>
+        <span class="occasion-name">Evlilik Yıl Dönümü</span>
+      </div>
+      <div class="occasion-card">
+        <span class="occasion-icon">🎂</span>
+        <span class="occasion-name">Doğum Günü</span>
+      </div>
+      <div class="occasion-card">
+        <span class="occasion-icon">👶</span>
+        <span class="occasion-name">Yeni Doğan</span>
+      </div>
+      <div class="occasion-card">
+        <span class="occasion-icon">🎓</span>
+        <span class="occasion-name">Mezuniyet</span>
+      </div>
+      <div class="occasion-card">
+        <span class="occasion-icon">💝</span>
+        <span class="occasion-name">Sevgililer Günü</span>
+      </div>
+      <div class="occasion-card">
+        <span class="occasion-icon">🏢</span>
+        <span class="occasion-name">Kurumsal</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Müşteri Yorumları</p>
+      <h2 class="section-title"><em>Hissettirdiklerimiz</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <span class="testi-stars">★★★★★</span>
+        <p class="testi-quote">"Annem bu hediyeyi aldığında ağladı. Detaylara gösterdikleri özen gerçekten büyüleyici."</p>
+        <span class="testi-author">— Ayşe K., İstanbul</span>
+      </div>
+      <div class="testi-card">
+        <span class="testi-stars">★★★★★</span>
+        <p class="testi-quote">"Kurumsal yılsonu hediyelerimizi buradan sipariş ettik. Her çalışanımız ayrıca teşekkür etti."</p>
+        <span class="testi-author">— Mehmet D., Ankara</span>
+      </div>
+      <div class="testi-card">
+        <span class="testi-stars">★★★★★</span>
+        <p class="testi-quote">"Kişisel not kartı ve isim yazılı paketi görünce inanılmaz duygulandım. Tekrar alacağım."</p>
+        <span class="testi-author">— Zeynep A., İzmir</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" style="padding: 100px 5%;">
+    <div class="section-header" style="margin-bottom: 24px;">
+      <p class="section-eyebrow">✦ Bülten</p>
+      <h2 class="section-title">Yeni koleksiyonlardan<br>ilk <em>siz</em> haberdar olun</h2>
+    </div>
+    <p>Özel indirimler, yeni ürünler ve hediye fikirleri için bültenimize abone olun.</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="E-posta adresiniz..." />
+      <button class="btn-primary" style="white-space: nowrap; padding: 16px 32px;">Abone Ol</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">dilek<span>kutum</span></a>
+        <p>Premium hediye kutulaması ve hediyelik eşya alanında Türkiye'nin en özenli markası olma yolunda ilerliyoruz.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link">ig</a>
+          <a href="#" class="social-link">tw</a>
+          <a href="#" class="social-link">fb</a>
+          <a href="#" class="social-link">pi</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Koleksiyonlar</h4>
+        <ul>
+          <li><a href="#">Romantik Setler</a></li>
+          <li><a href="#">Doğum Günü</a></li>
+          <li><a href="#">Özel Günler</a></li>
+          <li><a href="#">Kurumsal</a></li>
+          <li><a href="#">Tüm Ürünler</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Bilgi</h4>
+        <ul>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">Nasıl Çalışır</a></li>
+          <li><a href="#">Kargo Bilgileri</a></li>
+          <li><a href="#">İade Politikası</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="#">info@dilekkutum.com</a></li>
+          <li><a href="#">0850 XXX XX XX</a></li>
+          <li><a href="#">WhatsApp Destek</a></li>
+          <li><a href="#">Kurumsal Satış</a></li>
+          <li><a href="#">SSS</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 dilekkutum.com — Tüm hakları saklıdır.</p>
+      <div class="payment-icons">
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">MC</span>
+        <span class="pay-icon">TROY</span>
+        <span class="pay-icon">İYZİCO</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
