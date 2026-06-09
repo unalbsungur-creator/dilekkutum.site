@@ -1103,7 +1103,7 @@
     <div class="nav-actions">
       <a href="#" class="nav-icon">Arama</a>
       <a href="#" class="nav-icon">Hesabım</a>
-      <a href="#" class="nav-icon">Sepet <span class="cart-badge">3</span></a>
+      <a href="#" class="nav-icon">Sepet <span class="cart-badge" id="cart-count">0</span></a>
     </div>
   </nav>
 
@@ -1467,5 +1467,23 @@
     </div>
   </footer>
 
+<script>
+let cartCount = 0;
+
+document.querySelectorAll('.add-btn').forEach(button => {
+
+    button.addEventListener('click', function() {
+
+        cartCount++;
+
+        document.getElementById('cart-count').textContent = cartCount;
+
+    });
+
+});
+</script>
+
+
+  
 </body>
 </html>
