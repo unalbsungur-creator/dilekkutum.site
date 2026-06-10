@@ -1510,9 +1510,11 @@ document.querySelectorAll('.product-card').forEach(card => {
             card.querySelector('.product-price').textContent;
 
         cartItems.push({
-            name: productName,
-            price: productPrice
-        });
+    name: productName,
+    price: productPrice
+});
+
+alert("Sepetteki ürün sayısı: " + cartItems.length);
 
         const toast = document.getElementById('toast');
 
