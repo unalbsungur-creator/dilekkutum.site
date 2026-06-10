@@ -1489,6 +1489,7 @@
   </footer>
 
 <script>
+
 let cartCount = 0;
 let cartItems = [];
 
@@ -1498,59 +1499,56 @@ document.querySelectorAll('.product-card').forEach(card => {
 
     button.addEventListener('click', function() {
 
-       cartCount++;
+        cartCount++;
 
-    document.getElementById('cart-count').textContent = cartCount;
+        document.getElementById('cart-count').textContent = cartCount;
 
-    const productName =
-        card.querySelector('.product-name').textContent;
+        const productName =
+            card.querySelector('.product-name').textContent;
 
-    const productPrice =
-        card.querySelector('.product-price').textContent;
+        const productPrice =
+            card.querySelector('.product-price').textContent;
 
-    cartItems.push({
-        name: productName,
-        price: productPrice
+        cartItems.push({
+            name: productName,
+            price: productPrice
+        });
+
+        const toast = document.getElementById('toast');
+
+        toast.textContent = productName + " sepete eklendi";
+
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+
     });
 
-    console.log(cartItems);
-
-    const toast = document.getElementById('toast');
-
-    toast.textContent = productName + " sepete eklendi";
-
-    toast.classList.add('show');
-
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 2000);
-
 });
-
-
-
 
 
 document.getElementById('cart-link').addEventListener('click', function(e) {
 
     e.preventDefault();
 
-    console.log(cartItems);
-    
-    alert("Sepette ürün sayısı: " + cartItems.length);
-
     if(cartItems.length === 0){
         alert("Sepet boş");
         return;
     }
 
-    let message = "Merhaba, sipariş vermek istiyorum:%0A%0A";
+    let message = "Merhaba, sipariş vermek istiyorum:\n\n";
 
-    cartItems.forEach(function(item) {
-        message += item.name + " - " + item.price + "%0A";
+    cartItems.forEach(function(item){
+        message += item.name + " - " + item.price + "\n";
     });
 
-    alert(message);
+    const whatsappUrl =
+      "https://wa.me/905496009452?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappUrl, "_blank");
 
 });
 
