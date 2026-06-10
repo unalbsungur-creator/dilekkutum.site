@@ -1545,8 +1545,9 @@ alert("Sepet dolu, WhatsApp açılacak");
 let message = "Merhaba, sipariş vermek istiyorum:\n\n";
 
     cartItems.forEach(function(item){
-        message += item.name + " - " + item.price + "\n";
-    });
+    alert(item.name);
+    message += item.name + " - " + item.price + "\n";
+});
 
     const whatsappUrl =
     "https://wa.me/905496009452?text=" +
