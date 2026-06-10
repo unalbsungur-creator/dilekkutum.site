@@ -1511,6 +1511,10 @@ document.querySelectorAll('.product-card').forEach(card => {
             price: productPrice
         });
 
+        console.log(cartItems);
+        
+        alert("Ürün sepete yazıldı: " + productName);
+
         const toast = document.getElementById('toast');
 
 toast.textContent = productName + " sepete eklendi";
@@ -1530,7 +1534,7 @@ setTimeout(() => {
 
 document.getElementById('cart-link').addEventListener('click', function(e){
 
-    alert("Sepet tıklandı");
+    alert("SEPET TIKLANDI");
 
     e.preventDefault();
 
