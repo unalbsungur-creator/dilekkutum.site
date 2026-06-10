@@ -1536,21 +1536,25 @@ document.getElementById('cart-link').addEventListener('click', function(e) {
     e.preventDefault();
 
     if(cartItems.length === 0){
-        alert("Sepet boş");
-        return;
-    }
+    alert("Sepet boş");
+    return;
+}
 
-    let message = "Merhaba, sipariş vermek istiyorum:\n\n";
+alert("Sepet dolu, WhatsApp açılacak");
+
+let message = "Merhaba, sipariş vermek istiyorum:\n\n";
 
     cartItems.forEach(function(item){
         message += item.name + " - " + item.price + "\n";
     });
 
     const whatsappUrl =
-      "https://wa.me/905496009452?text=" +
-      encodeURIComponent(message);
+    "https://wa.me/905496009452?text=" +
+    encodeURIComponent(message);
 
-    window.open(whatsappUrl, "_blank");
+alert(whatsappUrl);
+
+window.open(whatsappUrl, "_blank");
 
 });
 
