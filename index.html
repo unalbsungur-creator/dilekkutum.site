@@ -1536,6 +1536,8 @@ document.getElementById('cart-link').addEventListener('click', function(e) {
     e.preventDefault();
 
     console.log(cartItems);
+    
+    alert("Sepette ürün sayısı: " + cartItems.length);
 
     if(cartItems.length === 0){
         alert("Sepet boş");
