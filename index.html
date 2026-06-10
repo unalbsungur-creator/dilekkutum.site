@@ -1534,29 +1534,26 @@ setTimeout(() => {
 
 
 
-document.getElementById('cart-link').addEventListener('click', function(e){
-
-    alert("SEPET TIKLANDI");
+document.getElementById('cart-link').addEventListener('click', function(e) {
 
     e.preventDefault();
 
-    if(cartItems.length === 0){
+    alert("SEPET TIKLANDI");
+
+    alert("Sepette ürün sayısı: " + cartItems.length);
+
+    if (cartItems.length === 0) {
         alert("Sepet boş");
         return;
     }
 
     let message = "Merhaba, sipariş vermek istiyorum:%0A%0A";
 
-    cartItems.forEach(item => {
-    message += item.name + " - " + item.price + "%0A";
-});
+    cartItems.forEach(function(item) {
+        message += item.name + " - " + item.price + "%0A";
+    });
 
-alert(message);
-
-    window.open(
-        "https://wa.me/905496009452?text=" + message,
-        "_blank"
-    );
+    alert(message);
 
 });
 
