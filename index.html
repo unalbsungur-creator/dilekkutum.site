@@ -1540,12 +1540,15 @@ document.getElementById('cart-link').addEventListener('click', function(e) {
 
     alert("SEPET TIKLANDI");
 
-    alert("Sepette ürün sayısı: " + cartItems.length);
+e.preventDefault();
 
-    if (cartItems.length === 0) {
-        alert("Sepet boş");
-        return;
-    }
+alert("cartItems uzunluğu = " + cartItems.length);
+console.log(cartItems);
+
+if(cartItems.length === 0){
+    alert("Sepet boş");
+    return;
+}
 
     let message = "Merhaba, sipariş vermek istiyorum:%0A%0A";
 
