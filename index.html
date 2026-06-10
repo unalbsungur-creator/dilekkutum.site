@@ -1542,8 +1542,10 @@ document.getElementById('cart-link').addEventListener('click', function(e){
     let message = "Merhaba, sipariş vermek istiyorum:%0A%0A";
 
     cartItems.forEach(item => {
-        message += item.name + " - " + item.price + "%0A";
-    });
+    message += item.name + " - " + item.price + "%0A";
+});
+
+alert(message);
 
     window.open(
         "https://wa.me/905496009452?text=" + message,
