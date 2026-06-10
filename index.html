@@ -1118,9 +1118,9 @@
     <a href="#" class="logo">dilek<span>kutum</span></a>
 
     <div class="nav-actions">
-      <a href="#" class="nav-icon">Arama</a>
-      <a href="#" class="nav-icon">Hesabım</a>
-      <a href="#" class="nav-icon">Sepet <span class="cart-badge" id="cart-count">0</span></a>
+      <a href="#" class="nav-icon" id="cart-link">
+    Sepet <span class="cart-badge" id="cart-count">0</span>
+</a>
     </div>
   </nav>
 
@@ -1514,6 +1514,52 @@ setTimeout(() => {
     });
 
 });
+let cartItems = [];
+
+document.querySelectorAll('.add-btn').forEach(button => {
+
+    button.addEventListener('click', function() {
+
+        const card = button.closest('.product-card');
+
+        const productName =
+            card.querySelector('.product-name').textContent;
+
+        const productPrice =
+            card.querySelector('.product-price').textContent;
+
+        cartItems.push({
+            name: productName,
+            price: productPrice
+        });
+
+    });
+
+});
+
+
+document.getElementById('cart-link').addEventListener('click', function(e){
+
+    e.preventDefault();
+
+    if(cartItems.length === 0){
+        alert("Sepet boş");
+        return;
+    }
+
+    let message = "Merhaba, sipariş vermek istiyorum:%0A%0A";
+
+    cartItems.forEach(item => {
+        message += item.name + " - " + item.price + "%0A";
+    });
+
+    window.open(
+        "https://wa.me/905496009452?text=" + message,
+        "_blank"
+    );
+
+});
+
 </script>
 
 
