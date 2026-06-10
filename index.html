@@ -1542,23 +1542,16 @@ document.getElementById('cart-link').addEventListener('click', function(e) {
 
 alert("SEPET DOLU, WhatsApp açılacak");
 
-let message = "Merhaba, sipariş vermek istiyorum:\n\n";
+let message = "Merhaba, sipariş vermek istiyorum:%0A%0A";
 
 cartItems.forEach(function(item){
-    message += item.name + " - " + item.price + "\n";
+    message += item.name + " - " + item.price + "%0A";
 });
 
-alert(message);
-
-const whatsappUrl =
-    "https://wa.me/905496009452?text=" +
-    encodeURIComponent(message);
-
-alert(whatsappUrl);
-
-location.href = whatsappUrl;
-
-});
+window.open(
+    "https://wa.me/905496009452?text=" + message,
+    "_blank"
+);
 
 </script>
 
