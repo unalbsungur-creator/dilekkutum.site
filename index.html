@@ -8,8 +8,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --cream: #FAF7F2;
+    :root {--cream: #FAF7F2;
       --warm-white: #FDF9F4;
       --blush: #E8D5C4;
       --rose: #C4957A;
@@ -1080,6 +1079,24 @@
       .footer-grid { grid-template-columns: 1fr; }
       .hero-stats { flex-direction: column; gap: 20px; }
     }
+    #toast{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#2f241f;
+    color:white;
+    padding:15px 20px;
+    border-radius:8px;
+    opacity:0;
+    transition:0.3s;
+    z-index:9999;
+}
+
+#toast.show{
+    opacity:1;
+}
+
+
   </style>
 </head>
 <body>
@@ -1106,6 +1123,8 @@
       <a href="#" class="nav-icon">Sepet <span class="cart-badge" id="cart-count">0</span></a>
     </div>
   </nav>
+
+  
 
   <!-- HERO -->
   <section class="hero" style="padding: 0;">
@@ -1483,13 +1502,23 @@ document.querySelectorAll('.product-card').forEach(card => {
         const productName =
             card.querySelector('.product-name').textContent;
 
-        alert(productName + " sepete eklendi");
+        const toast = document.getElementById('toast');
+
+toast.textContent = productName + " sepete eklendi";
+
+toast.classList.add('show');
+
+setTimeout(() => {
+    toast.classList.remove('show');
+}, 2000);
     });
 
 });
 </script>
 
 
-  
+ <div id="toast"></div> 
+
+
 </body>
 </html>
