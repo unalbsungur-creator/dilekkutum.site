@@ -1488,6 +1488,7 @@
 
 <script>
 let cartCount = 0;
+let cartItems = [];
 
 document.querySelectorAll('.product-card').forEach(card => {
 
@@ -1501,6 +1502,14 @@ document.querySelectorAll('.product-card').forEach(card => {
 
         const productName =
             card.querySelector('.product-name').textContent;
+
+        const productPrice =
+            card.querySelector('.product-price').textContent;
+
+        cartItems.push({
+            name: productName,
+            price: productPrice
+        });
 
         const toast = document.getElementById('toast');
 
@@ -1516,26 +1525,7 @@ setTimeout(() => {
 });
 let cartItems = [];
 
-document.querySelectorAll('.add-btn').forEach(button => {
 
-    button.addEventListener('click', function() {
-
-        const card = button.closest('.product-card');
-
-        const productName =
-            card.querySelector('.product-name').textContent;
-
-        const productPrice =
-            card.querySelector('.product-price').textContent;
-
-        cartItems.push({
-            name: productName,
-            price: productPrice
-        });
-
-    });
-
-});
 
 
 document.getElementById('cart-link').addEventListener('click', function(e){
